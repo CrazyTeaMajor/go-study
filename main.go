@@ -101,7 +101,114 @@ var a func(string) int
 var a error // error 是接口
 */
 
+var arraySize int = 10001
+
+const totSize int = 100001
+const adminName string = "Admin"
+const userName = "czt"
+
+const (
+	//用来枚举
+	Xiuji  = 0
+	female = 1
+	male   = 2
+)
+
+func testStudyTwo() {
+	var number0 = 5.2
+	fmt.Printf("%f\n", number0)
+	newNumber := 4.8
+	fmt.Println(newNumber + number0)
+	var number1 int
+	fmt.Println(number1)
+	number1, number2 := 1, 2
+	fmt.Println(number1)
+	fmt.Println(number2)
+	var (
+		str1    string
+		number3 int
+		year    int
+		day     int
+		height  float32
+	)
+	//一般用作声明全局不同变量
+	str1 = "Awasdsx"
+	fmt.Println(str1 + " is XXXX")
+	number3 = arraySize
+	fmt.Printf("Const %d = %d\n", number3, arraySize)
+	year = 2021
+	day = 23
+	height = 1.8
+	fmt.Printf("%d.1.%d my height is %.2f\n", year, day, height)
+}
+
+func optTest() {
+	var n1, n2, n3 = 2, 3, 4
+	fmt.Printf("n1 = %d, n2 = %d, n3 = %d\n", n1, n2, n3)
+	fmt.Print("n1 + n2 = ")
+	fmt.Println(n1 + n2)
+	fmt.Print("n1 - n2 = ")
+	fmt.Println(n1 - n2)
+	fmt.Print("n1 * n2 = ")
+	fmt.Println(n1 * n2)
+	fmt.Print("n1 / n2 = ")
+	fmt.Println(n1 / n2)
+	fmt.Print("n3 / n1 = ")
+	fmt.Println(n3 / n1)
+	fmt.Print("n2 % n1 = ")
+	fmt.Println(n2 % n1)
+	fmt.Print("n1++ =")
+	n1++
+	fmt.Println(n1)
+	fmt.Print("n1-- =")
+	n1--
+	fmt.Println(n1)
+	fmt.Print("n1 += n2 =")
+	n1 += n2
+	fmt.Println(n1)
+	fmt.Print("n1 *= n2 =")
+	n1 *= n2
+	fmt.Println(n1)
+	fmt.Print("n1 -= n2 =")
+	n1 -= n2
+	fmt.Println(n1)
+	//fmt.Println(n1--)
+	//	++n1
+	//但是这两种不行，自增自减不能写在前面，也不能写在输出里面，保证了逻辑的简单性
+	//Go的运算符基本上与C++没有差别，包括逻辑运算符等
+	if n1 >= 0 && n2 >= 0 {
+		fmt.Println("Yes")
+	}
+	// if(n1 >= 0 && n2 >= 0) {} 这种加小括号也行，但是没有必要
+	if ((n1 + 5) * n2 - 100) >= 0 {
+		fmt.Println("Oh, yeah")
+	} else {
+		fmt.Println("Oh, no")
+	}
+	var c1 = 1.0 + 2.0i
+	fmt.Println(c1)
+	//可直接使用复数符号
+}
+
+func ptrTest() {
+	var a int = 4
+	var ptr *int
+	fmt.Println(a)
+	ptr = &a
+	*ptr++
+	fmt.Println(a)
+}
+/*
+import "base"
+base.print("ASD")
+要用自己写的包时，先在cmd里面go install 你的包的名称
+*/
 func main() {
-	//	output()
-	testVarType()
+	//fmt.Print(printtest("ASD"))
+	// output()
+	// testVarType()
+	// testStudyTwo()
+	// test()
+	// optTest()
+	ptrTest()
 }

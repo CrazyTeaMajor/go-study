@@ -1,0 +1,57 @@
+package main
+
+import "fmt"
+
+func main() {
+   var a int = 4
+   var b int32
+   var c float32
+   var ptr *int
+
+   /* 运算符实例 */
+   fmt.Printf("第 1 行 - a 变量类型为 = %T\n", a );
+   fmt.Printf("第 2 行 - b 变量类型为 = %T\n", b );
+   fmt.Printf("第 3 行 - c 变量类型为 = %T\n", c );
+
+   /*  & 和 * 运算符实例 */
+   ptr = &a     /* 'ptr' 包含了 'a' 变量的地址 */
+   fmt.Printf("a 的值为  %d\n", a);
+   fmt.Printf("*ptr 为 %d\n", *ptr);
+}
+以上实例运行结果：
+
+第 1 行 - a 变量类型为 = int
+第 2 行 - b 变量类型为 = int32
+第 3 行 - c 变量类型为 = float32
+a 的值为  4
+*ptr 为 4
+
+package main
+
+import "fmt"
+
+func main() {
+   var a int = 20
+   var b int = 10
+   var c int = 15
+   var d int = 5
+   var e int;
+
+   e = (a + b) * c / d;      // ( 30 * 15 ) / 5
+   fmt.Printf("(a + b) * c / d 的值为 : %d\n",  e );
+
+   e = ((a + b) * c) / d;    // (30 * 15 ) / 5
+   fmt.Printf("((a + b) * c) / d 的值为  : %d\n" ,  e );
+
+   e = (a + b) * (c / d);   // (30) * (15/5)
+   fmt.Printf("(a + b) * (c / d) 的值为  : %d\n",  e );
+
+   e = a + (b * c) / d;     //  20 + (150/5)
+   fmt.Printf("a + (b * c) / d 的值为  : %d\n" ,  e );  
+}
+以上实例运行结果：
+
+(a + b) * c / d 的值为 : 90
+((a + b) * c) / d 的值为  : 90
+(a + b) * (c / d) 的值为  : 90
+a + (b * c) / d 的值为  : 50
